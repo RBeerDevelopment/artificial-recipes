@@ -25,6 +25,7 @@ export function IngredientInput(props: Props): React.ReactElement {
                 } 
                 onFocus={onFocus}
                 autoFocus={isFocused}
+                placeholder="Add ingredient..."
             />
 
             {showDelete && <DeleteIcon onClick={onDelete}/>}
