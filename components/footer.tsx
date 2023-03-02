@@ -2,14 +2,14 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bottom-0 text-center h-16 sm:h-24 w-full pt-8 md:pt-4 border-t mt-5 flex sm:flex-row flex-col justify-around items-center px-3 space-y-2 sm:mb-2 mb-5">
+    <footer className="bottom-0 mt-5 mb-5 flex h-16 w-full flex-col items-center justify-around space-y-2 border-t px-3 pt-8 text-center sm:mb-2 sm:h-24 sm:flex-row md:pt-4">
       <div>
         Powered by{" "}
         <a
           href="https://openai.com"
           target="_blank"
           rel="noreferrer"
-          className="font-bold hover:underline transition underline-offset-2"
+          className="font-bold underline-offset-2 transition hover:underline"
         >
           OpenAI{" "}
         </a>
@@ -18,7 +18,7 @@ export default function Footer() {
           href="https://vercel.com/"
           target="_blank"
           rel="noreferrer"
-          className="font-bold hover:underline transition underline-offset-2"
+          className="font-bold underline-offset-2 transition hover:underline"
         >
           Vercel.
         </a>

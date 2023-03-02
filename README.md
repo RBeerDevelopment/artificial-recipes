@@ -1,4 +1,3 @@
-
 # Artificial Recipes
 
 A simple web app that generates recipes from your leftovers, using GPT-3.
@@ -31,16 +30,12 @@ Start in dev mode
   pnpm dev
 ```
 
-
 ## Feedback
 
 If you have any feedback, please reach out to us at contact@robin-beer.com
 
-
 ## Acknowledgements
 
- - [OpenAI GPT-3](https://openai.com/api/)
- - [Vercel](https://vercel.com/)
- - [Template](https://vercel.com/templates/next.js/app-directory)
-
-
+- [OpenAI GPT-3](https://openai.com/api/)
+- [Vercel](https://vercel.com/)
+- [Template](https://vercel.com/templates/next.js/app-directory)

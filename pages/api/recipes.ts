@@ -3,16 +3,14 @@ import { Console } from "console";
 import { NextRequest } from "next/server";
 
 export const config = {
-  runtime: 'edge',
+  runtime: "edge",
 };
 
 if (!process.env.OPENAI_API_KEY) {
-  throw new Error("Missing OPENAI_API_KEY")
+  throw new Error("Missing OPENAI_API_KEY");
 }
 
 export default async function handler(req: NextRequest) {
-
-
   const { ingredients } = (await req.json()) as { ingredients: string[] };
 
   if (!ingredients) {
@@ -33,7 +31,7 @@ export default async function handler(req: NextRequest) {
     max_tokens: 2000,
     stream: true,
     n: 1,
-  }
+  };
 
   const stream = await OpenAIStream(payload);
 

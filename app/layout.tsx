@@ -6,18 +6,14 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function RootLayout({
-  children,
-}: Props) {
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" className="[color-scheme:dark]">
       <head />
-      <body className="overflow-y-hidden h-screen flex flex-col justify-between bg-black px-8 py-2">
+      <body className="flex h-screen flex-col justify-between overflow-y-hidden bg-black px-8 py-2">
         <Header />
-        <div className="overflow-y-scroll h-full">
-          {children}
-        </div>
-        <Footer/>
+        <div className="h-full overflow-y-scroll">{children}</div>
+        <Footer />
       </body>
     </html>
   );
