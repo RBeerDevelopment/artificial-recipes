@@ -25,9 +25,9 @@ export default async function handler(req: NextRequest) {
     The ingredients are: ${ingredients.join(", ")}`;
 
   const payload: OpenAIStreamPayload = {
-    model: "text-davinci-003",
-    prompt,
-    temperature: 0.7,
+    model: "gpt-3.5-turbo",
+    messages: [{ role: "user", content: prompt }],
+    temperature: 0.5,
     frequency_penalty: 0,
     presence_penalty: 0,
     max_tokens: 2000,
