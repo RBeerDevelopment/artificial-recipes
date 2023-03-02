@@ -20,7 +20,6 @@ export function RecipeSection(props: Props): React.ReactElement {
   }
 
   const recipeStrings = splitUpRecipes(gptResponse);
-  console.log({ recipeStrings });
   const recipes: Recipe[] = recipeStrings.map((recipeString) => {
     const title = extraceRecipeName(recipeString);
     const ingredients = extractIngredients(recipeString);
@@ -29,8 +28,6 @@ export function RecipeSection(props: Props): React.ReactElement {
       ingredients,
     };
   });
-
-  console.log({ recipes });
 
   return (
     <div className="mx-4 flex w-full flex-col items-center justify-center gap-y-4 lg:w-1/3">
