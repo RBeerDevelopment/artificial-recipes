@@ -1,32 +1,42 @@
-import { extraceRecipeName, extractIngredients, splitUpRecipes } from "#/utils/recipe-extraction";
+import {
+  extraceRecipeName,
+  extractIngredients,
+  splitUpRecipes,
+} from "#/utils/recipe-extraction";
 import React from "react";
 import { Recipe, RecipeCard } from "./recipe-card";
 
 interface Props {
-    gptResponse: string
+  gptResponse: string;
 }
 
 export function RecipeSection(props: Props): React.ReactElement {
+  const { gptResponse } = props;
 
-    const { gptResponse } = props;
+  console.log(gptResponse);
 
-    if(gptResponse === "") {
-        return <></>
-    }
+  if (gptResponse === "") {
+    return <></>;
+  }
 
-    const recipeStrings = splitUpRecipes(gptResponse);
-    const recipes: Recipe[] = recipeStrings.map((recipeString) => {
-        const title = extraceRecipeName(recipeString);
-        const ingredients = extractIngredients(recipeString);
-        return {
-            title,
-            ingredients
-        }
-    });
+  const recipeStrings = splitUpRecipes(gptResponse);
+  console.log({ recipeStrings });
+  const recipes: Recipe[] = recipeStrings.map((recipeString) => {
+    const title = extraceRecipeName(recipeString);
+    const ingredients = extractIngredients(recipeString);
+    return {
+      title,
+      ingredients,
+    };
+  });
 
-    return (
-        <div className="flex flex-col gap-y-4 w-full lg:w-1/3 mx-4 justify-center items-center">
-           {recipes.map((recipe) => <RecipeCard key={recipe.title} recipe={recipe} />)}
-        </ div>
-    );
+  console.log({ recipes });
+
+  return (
+    <div className="mx-4 flex w-full flex-col items-center justify-center gap-y-4 lg:w-1/3">
+      {recipes.map((recipe) => (
+        <RecipeCard key={recipe.title} recipe={recipe} />
+      ))}
+    </div>
+  );
 }
